@@ -1,6 +1,3 @@
-# troubleshooting-portfolio
-Anonymised Tier 2/3 support investigations: root-cause analysis and escalation.
-
 # Troubleshooting Portfolio
 
 I'm a technical Customer Success specialist with 5+ years supporting a B2B low-code/no-code platform, working the kind of investigations that sit at the Tier 2/3 support boundary: reproducing vague reports, isolating root causes from console and log output, and escalating cleanly when an issue is bigger than one ticket.
