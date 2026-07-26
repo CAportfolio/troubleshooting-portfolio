@@ -2,7 +2,7 @@
 
 I'm a technical Customer Success specialist with 5+ years supporting a B2B low-code/no-code platform, working the kind of investigations that sit at the Tier 2/3 support boundary: reproducing vague reports, isolating root causes from console and log output, and escalating cleanly when an issue is bigger than one ticket.
 
-This portfolio collects five real investigations, anonymised. They span front-end behaviour, a data-integration failure, an API payload rejection, and two cases of expiring signed URLs that turned out to be the same platform-level pattern. In three of the five, the cause the user reported was plausible and wrong — the actual work was testing that explanation and rejecting it before acting, which is the habit these cases are meant to show.
+This portfolio collects real investigations, anonymised. They span front-end behaviour, a data-integration failure, an API payload rejection, and two cases of expiring signed URLs that turned out to be the same platform-level pattern. In three of the use cases, the cause the user reported was plausible and wrong — the actual work was testing that explanation and rejecting it before acting, which is the habit these cases are meant to show.
 
 Each case follows the same structure: the symptom as reported, the investigation in order with the reasoning behind each step, the root cause, and how it was resolved or escalated. They're written to be judged on whether the reasoning was sound.
 
