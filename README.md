@@ -14,4 +14,4 @@ Each case follows the same structure: the symptom as reported, the investigation
 4. [Directory screen showing no content after a login change](cases/04-directory-empty-after-login-change.md) — a reported cause disproved; two coincident issues separated
 5. [Agenda list going blank when a field was hidden](cases/05-agenda-blank-on-hidden-field.md) — a plausible-but-wrong first hypothesis, caught before fixing the wrong thing
 6. [Bookmark toggle stuck permanently on a single document](06-bookmark-toggle-stuck.md) — cross-user data bleeding into a filtered query; traced by inspecting the raw data source response in the browser console
-7. Inline links invisible to a Windows screen reader — platform renders anchor tags without href; NVDA requires explicit role="link" which the component never sets
+7. [Inline links invisible to a Windows screen reader](07-nvda-inline-links-skipped.md) — platform renders anchor tags without href; NVDA requires explicit role="link" which the component never sets
