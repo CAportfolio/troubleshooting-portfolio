@@ -57,14 +57,14 @@ Reading `getUser()` more carefully:
 
 ```javascript
 function getUser() {
-  return Fliplet.Session.get().then(function(session) {
+  return Platform.Session.get().then(function(session) {
     if (session && session.entries) {
       if (session.entries.dataSource) {
         return { id: session.entries.dataSource.id, 
                  ...session.entries.dataSource.data };
       }
       if (session.entries.saml2) { ... }
-      if (session.entries.flipletLogin) { ... }
+      if (session.entries.PlatformLogin) { ... }
     } else {
       return null;
     }
@@ -78,9 +78,9 @@ auth method, `session.entries.dataSource` would be absent and the function
 would fall through all three conditions and return `undefined` implicitly 
 — which behaves identically to null at the call site.
 
-The app security rule was set to require a valid Fliplet login rather than 
+The app security rule was set to require a valid Platform login rather than 
 email/password. This meant sessions were being created under 
-`flipletLogin` rather than `dataSource`, so `session.entries.dataSource` 
+`PlatformLogin` rather than `dataSource`, so `session.entries.dataSource` 
 was never populated. `getUser()` fell through to an implicit undefined 
 return on every call, for every user, regardless of whether they had 
 successfully logged in.
@@ -114,7 +114,7 @@ processing had advanced far enough to reach this code. Null guards were
 added to all three lines.
 
 ## Root cause
-The app security rule was configured to require a valid Fliplet login 
+The app security rule was configured to require a valid Platform login 
 rather than email/password. This caused `getUser()` to return undefined 
 on every call because it only checks `session.entries.dataSource`, which 
 is only populated for email/password sessions. The null return cascaded 
@@ -126,7 +126,7 @@ null data objects — was masked until the primary authentication issue was
 resolved.
 
 ## Resolution & prevention
-- App security rule changed from "valid Fliplet login" to "email/password"
+- App security rule changed from "valid Platform login" to "email/password"
 - Onboarding screen added as a security rule exception to prevent 
   unauthenticated users being caught in a redirect loop before reaching 
   the login screen
